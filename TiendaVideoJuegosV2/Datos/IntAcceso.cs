@@ -10,7 +10,7 @@ namespace TiendaVideoJuegosV2.Datos
     {
         bool insertarJuego(TJuego juego);
         bool borrarJuego(TJuego juego);
-        Object buscarJuego(String nombre);
+        object buscarJuego(String nombre);
         List<object> obtenerJuegos();
         bool modificarJuego(TJuego juego, String titulo);
     }

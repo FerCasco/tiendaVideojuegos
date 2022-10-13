@@ -59,6 +59,7 @@ namespace TiendaVideoJuegosV2.Modelo
             Formatouno = formatouno;
             Formatodos = formatodos;
             Estado = estado;
+            Borrado = "0";
         }
 
         public override string ToString()

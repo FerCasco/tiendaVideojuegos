@@ -267,6 +267,18 @@
             this.cbBox_Categoria.Size = new System.Drawing.Size(163, 21);
             this.cbBox_Categoria.TabIndex = 8;
             this.cbBox_Categoria.SelectedIndexChanged += new System.EventHandler(this.cbBox_Categoria_SelectedIndexChanged);
+            this.cbBox_Categoria.Items.AddRange(new object[]{
+                "Accion",
+                "Arcade",
+                "Aventuras",
+                "Juegos de mesa",
+                "Juegos educativos",
+                "Juegos musicales",
+                "Plataformas",
+                "Sandbox",
+                "Shooter",
+                "Terror"
+            });
             // 
             // PantallaPrincipal
             // 

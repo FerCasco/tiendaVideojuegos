@@ -11,10 +11,10 @@ namespace TiendaVideoJuegosV2.Datos
     {
         public static String sqlInsertarJuego(TJuego juego)
         {
-            return "Insert into `tjuego`(`compania`,`titulo`,`categoria,`precio`,`formatouno`,`formatodos`,`estado`,`borrrado`)" +
-                " VALUES (`" + juego.Compania + "` , `" + juego.Titulo + "` , `" + juego.Categoria + "` , `"
-                    + juego.Precio + "` , `" + juego.Formatouno + "` , `" + juego.Formatodos + "` , `"
-                    + juego.Estado + "` , `" + juego.Borrado + "`)";
+            return "INSERT INTO `tjuego`(`compania`, `titulo`, `categoria`, `precio`,`formatouno`, `formatodos`, `estado`,`borrado`) VALUES ('"
+                    + juego.Compania + "' , '" + juego.Titulo + "' , '" + juego.Categoria + "' , '"
+                    + juego.Precio + "' , '" + juego.Formatouno + "' , '" + juego.Formatodos + "' , '" + juego.Estado + "' , '"
+                    + juego.Borrado + "')";
         }
 
         public static String sqlBorrarJuego(String titulo)
