@@ -11,7 +11,7 @@ namespace TiendaVideoJuegosV2.Modelo
     {
         public string CodJuego { get; set; }
 
-        public string Compañia { get; set; }
+        public string Compania { get; set; }
 
         public string Titulo { get; set; }
         public string Categoria  { get; set; }
@@ -25,10 +25,10 @@ namespace TiendaVideoJuegosV2.Modelo
         {
         }
 
-        public TJuego(string codJuego, string compañia, string titulo, string categoria, string precio, string formatouno, string formatodos, string estado, string borrado)
+        public TJuego(string codJuego, string compania, string titulo, string categoria, string precio, string formatouno, string formatodos, string estado, string borrado)
         {
             CodJuego = codJuego;
-            Compañia = compañia;
+            Compania = compania;
             Titulo = titulo;
             Categoria = categoria;
             Precio = precio;
@@ -40,7 +40,7 @@ namespace TiendaVideoJuegosV2.Modelo
 
         public TJuego(string compañia, string titulo, string categoria, string precio, string formatouno, string formatodos, string estado, string borrado)
         {
-            Compañia = compañia;
+            Compania = compañia;
             Titulo = titulo;
             Categoria = categoria;
             Precio = precio;
@@ -50,9 +50,20 @@ namespace TiendaVideoJuegosV2.Modelo
             Borrado = "0";
         }
 
+        public TJuego(string compania, string titulo, string categoria, string precio, string formatouno, string formatodos, string estado)
+        {
+            this.Compania = compania;
+            Titulo = titulo;
+            Categoria = categoria;
+            Precio = precio;
+            Formatouno = formatouno;
+            Formatodos = formatodos;
+            Estado = estado;
+        }
+
         public override string ToString()
         {
-            return CodJuego+": " + Titulo.ToUpper() +", " +Compañia.ToUpper();
+            return CodJuego+": " + Titulo.ToUpper() +", " +Compania.ToUpper();
         }
     }
 }
