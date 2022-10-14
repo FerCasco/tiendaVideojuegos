@@ -36,7 +36,7 @@ namespace TiendaVideoJuegosV2.Datos
 
         public static String sqlModificarJuego(TJuego juego, String titulo)
         {
-            return "UPDATE `tjuego` SET `titulo`= '" + juego.Titulo + "' ,`compañia`= '" + juego.Compania
+            return "UPDATE `tjuego` SET `titulo`= '" + juego.Titulo + "' ,`compania`= '" + juego.Compania
                     + "' ,`categoria`= '" + juego.Categoria + "' ,`precio`= '" + juego.Precio + "' ,`formatouno`= '"
                     + juego.Formatouno + "' ,`formatodos`= '" + juego.Formatodos + "' ,`estado`= '" + juego.Estado + "' ,`borrado`= '" + juego.Borrado + "'  WHERE `titulo` = '"
                     + titulo + "'";

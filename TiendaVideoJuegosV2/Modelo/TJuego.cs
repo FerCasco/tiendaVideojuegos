@@ -64,7 +64,7 @@ namespace TiendaVideoJuegosV2.Modelo
 
         public override string ToString()
         {
-            return CodJuego+": " + Titulo.ToUpper() +", " +Compania.ToUpper();
+            return Titulo;
         }
     }
 }

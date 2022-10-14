@@ -56,14 +56,28 @@ namespace TiendaVideoJuegosV2
         private TJuego RecogerDatosPantalla()
         {
             TJuego juego=null;
-            string titulo, compania,categoria, precio, formatoUno, formatoDos, estado;
+            string compania,titulo,categoria, precio, formatoUno, formatoDos, estado;
             titulo = txtTitulo.Text;
             compania = txtCompania.Text;
             precio = txt_Precio.Text.Replace(".", ",");
             precio = precio.Replace("€", "");
             precio = precio.Trim();
-            formatoDos = chkBox_Digital.Checked ? chkBox_Digital.Text : "N/A";
-            formatoUno = chkBox_Fisico.Checked ? chkBox_Fisico.Text : "N/A";
+            if (chkBox_Fisico.Checked)
+            {
+                formatoUno = "Fisico";
+            }
+            else
+            {
+                formatoUno = "N/A";
+            }
+            if (chkBox_Digital.Checked)
+            {
+                formatoDos = "Digital";
+            }
+            else
+            {
+                formatoDos= "N/A";
+            }
             categoria = cbBox_Categoria.SelectedItem.ToString();
             //categoria = cbBox_Categoria.SelectedItem.ToString();
             if (rb_Nuevo.Checked)
@@ -77,7 +91,7 @@ namespace TiendaVideoJuegosV2
 
             if (titulo.Count() != 0 && precio.Count() != 0)
             {
-                juego = new TJuego(titulo, compania,categoria, precio, formatoUno, formatoDos, estado);
+                juego = new TJuego(compania,titulo,categoria, precio, formatoUno, formatoDos, estado);
             }
             return juego;
         }
@@ -86,7 +100,8 @@ namespace TiendaVideoJuegosV2
             txtTitulo.Text = juego.Titulo;
             txtCompania.Text = juego.Compania;
             txt_Precio.Text = juego.Precio;
-            if (juego.Estado.Equals("nuevo"))
+            cbBox_Categoria.Text = juego.Categoria;
+            if (juego.Estado.Equals("Nuevo"))
             {
                 rb_Nuevo.Checked = true;
                 rb_Seminuevo.Checked = false;
@@ -96,8 +111,26 @@ namespace TiendaVideoJuegosV2
                 rb_Nuevo.Checked = false;
                 rb_Seminuevo.Checked = true;
             }
-            chkBox_Fisico.Checked = juego.Formatouno.Equals("Fisico") ? true : false;
-            chkBox_Digital.Checked = juego.Formatodos.Equals("Digital") ? true : false;
+
+
+            if (juego.Formatouno.Equals("Fisico"))
+            {
+                chkBox_Fisico.Checked = true;
+            }
+            else
+            {
+                chkBox_Fisico.Checked= false;
+            }
+
+            if (juego.Formatodos.Equals("Digital"))
+            {
+                chkBox_Digital.Checked = true;
+            }
+            else
+            {
+                chkBox_Digital.Checked = false;
+            }
+      
             
         }
 
@@ -188,6 +221,7 @@ namespace TiendaVideoJuegosV2
             {
                 if (lst_Box.SelectedItem != null)
                 {
+
                     EnviarDatosAPantalla((TJuego)acceso.buscarJuego(lst_Box.SelectedItem.ToString()));
                 }
             }

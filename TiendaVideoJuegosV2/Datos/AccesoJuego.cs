@@ -37,7 +37,7 @@ namespace TiendaVideoJuegosV2.Datos
         public object buscarJuego(string nombre)
         {
             try {
-                return ejecutarUpdate(SentenciasSQL.sqlBuscarJuego(nombre));
+                return ejecutarConsulta(SentenciasSQL.sqlBuscarJuego(nombre), new TJuego()).First();
             }
             catch(Exception e)
             {
